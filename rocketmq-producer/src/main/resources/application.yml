@@ -1,0 +1,20 @@
+server:
+  port: 8081
+
+rocketmq:
+  nameServer: 10.128.163.175:9876
+  producer:
+    group: producer-group-local
+    send-message-timeout: 3000
+    retry-times-when-send-failed: 2
+
+logging:
+  level:
+    root: info
+  logback:
+    rollingpolicy:
+      max-file-size: 500MB
+      max-history: 30
+  file:
+    path: ./logs
+    name: basic-data-convert
