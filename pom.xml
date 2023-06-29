@@ -26,6 +26,7 @@
         <hutool.version>5.8.20</hutool.version>
         <snakeyaml.version>2.0</snakeyaml.version>
         <fastjson.version>2.0.34</fastjson.version>
+        <commons.version>3.2.2</commons.version>
     </properties>
 
     <dependencyManagement>
@@ -49,6 +50,11 @@
                 <groupId>com.alibaba</groupId>
                 <artifactId>fastjson</artifactId>
                 <version>${fastjson.version}</version>
+            </dependency>
+            <dependency>
+                <groupId>commons-collections</groupId>
+                <artifactId>commons-collections</artifactId>
+                <version>${commons.version}</version>
             </dependency>
         </dependencies>
     </dependencyManagement>

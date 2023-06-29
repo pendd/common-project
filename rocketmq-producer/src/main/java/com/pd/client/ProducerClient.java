@@ -5,6 +5,7 @@ import lombok.extern.slf4j.Slf4j;
 import org.apache.rocketmq.client.producer.SendCallback;
 import org.apache.rocketmq.client.producer.SendResult;
 import org.apache.rocketmq.client.producer.SendStatus;
+import org.apache.rocketmq.spring.autoconfigure.RocketMQProperties;
 import org.apache.rocketmq.spring.core.RocketMQTemplate;
 import org.apache.rocketmq.spring.support.RocketMQHeaders;
 import org.springframework.messaging.Message;
@@ -16,10 +17,11 @@ import org.springframework.stereotype.Component;
 public class ProducerClient {
 
     private final RocketMQTemplate rocketMQTemplate;
-    private final String topic = "plc_test_topic";
+    private final String topic;
 
-    public ProducerClient(RocketMQTemplate rocketMQTemplate) {
+    public ProducerClient(RocketMQTemplate rocketMQTemplate, RocketMQProperties rocketMQProperties) {
         this.rocketMQTemplate = rocketMQTemplate;
+        topic = rocketMQProperties.getPullConsumer().getTopic();
     }
 
     public void sendMessage(String message) {

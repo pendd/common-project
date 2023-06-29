@@ -7,6 +7,9 @@ rocketmq:
     group: producer-group-local
     send-message-timeout: 3000
     retry-times-when-send-failed: 2
+  pull-consumer:
+    topic: plc_test_topic
+    group: pull-consumer-local
 
 logging:
   level:
