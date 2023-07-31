@@ -20,4 +20,4 @@ logging:
       max-history: 30
   file:
     path: ./logs
-    name: basic-data-convert
+    name: rocketmq-producer
